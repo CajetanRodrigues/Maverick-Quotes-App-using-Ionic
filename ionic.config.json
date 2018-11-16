@@ -1,0 +1,8 @@
+{
+  "name": "ionic2-course",
+  "integrations": {
+    "cordova": {}
+  },
+  "v2": true,
+  "typescript": true
+}
