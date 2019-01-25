@@ -1,7 +1,7 @@
 
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-buttons start>
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
@@ -14,9 +14,20 @@
 
 
 <ion-content padding>
-  <h3 text-center>Select your favorite Quote</h3>
+  <ion-card color="secondary">
+
+    <ion-card-header text-center>
+      <b>Tip</b>
+    </ion-card-header>
+
+    <ion-card-content text-center>
+      Select your Favourite category
+    </ion-card-content>
+
+  </ion-card>
+
   <ion-list>
-    <button
+    <button (click)="onVibrate()"
       ion-item
       *ngFor="let quoteGroup of quoteCollection"
       [navPush]="quotesPage"
@@ -26,4 +37,9 @@
       <p>{{ quoteGroup.quotes.length }} Quotes</p>
     </button>
   </ion-list>
+  <ion-card color="dark">
+
+  </ion-card>
+
+
 </ion-content>

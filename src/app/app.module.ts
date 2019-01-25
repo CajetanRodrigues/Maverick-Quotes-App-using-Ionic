@@ -10,7 +10,14 @@ import { SettingsPage } from "../pages/settings/settings";
 import { TabsPage } from "../pages/tabs/tabs";
 import { QuotesService } from "../services/quotes";
 import { SettingsService } from "../services/settings";
-
+import {Clipboard} from "@ionic-native/clipboard";
+import {Toast} from "@ionic-native/toast";
+import {CreateQuotePage} from "../pages/createquote/createquote";
+import {ImagePicker} from "@ionic-native/image-picker";
+import {Camera} from "@ionic-native/camera";
+import { Crop } from '@ionic-native/crop';
+import { Vibration } from '@ionic-native/vibration';
+import {AdMobFree} from "@ionic-native/admob-free";
 @NgModule({
   declarations: [
     MyApp,
@@ -19,10 +26,12 @@ import { SettingsService } from "../services/settings";
     QuotesPage,
     QuotePage,
     SettingsPage,
-    TabsPage
+    TabsPage,
+    CreateQuotePage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -32,12 +41,23 @@ import { SettingsService } from "../services/settings";
     QuotesPage,
     QuotePage,
     SettingsPage,
-    TabsPage
+    TabsPage,
+    CreateQuotePage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     QuotesService,
-    SettingsService
+    SettingsService,
+    Clipboard,
+    Toast,
+    ImagePicker,
+    Camera,
+    Crop,
+    Vibration,
+    AdMobFree
+
+
+
   ]
 })
 export class AppModule {

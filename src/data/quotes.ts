@@ -1,5 +1,7 @@
+
 export default [
   {
+
     category: 'inspirational',
     quotes: [
       {

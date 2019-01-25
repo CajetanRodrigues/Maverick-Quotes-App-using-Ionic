@@ -3,6 +3,9 @@ import { Quote } from "../data/quote.interface";
 export class QuotesService {
   private favoriteQuotes: Quote[] = [];
 
+  constructor(){
+
+  }
   addQuoteToFavorites(quote: Quote) {
     this.favoriteQuotes.push(quote);
   }
@@ -17,6 +20,7 @@ export class QuotesService {
 
   getFavoriteQuotes() {
     return this.favoriteQuotes.slice(); // slice() returns a copy of the array.
+
    }
 
   isQuoteFavorite(quote: Quote) {

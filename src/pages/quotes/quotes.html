@@ -1,7 +1,7 @@
 
-<ion-header>
+<ion-header  >
 
-  <ion-navbar>
+  <ion-navbar  color="primary">
     <ion-title>{{ quoteGroup.category | uppercase }}</ion-title>
   </ion-navbar>
 
@@ -9,7 +9,17 @@
 
 
 <ion-content padding>
+  <ion-card color="secondary">
 
+    <ion-card-header  text-center>
+      Tip
+    </ion-card-header>
+
+    <ion-card-content text-center>
+      Copy your favourite Quote use it on social media at Ease !
+    </ion-card-content>
+
+  </ion-card>
   <ion-card *ngFor="let quote of quoteGroup.quotes; let i = index">
     <ion-card-header>
       #{{ i + 1 }}
@@ -19,21 +29,29 @@
       <p class="author">{{ quote.person }}</p>
     </ion-card-content>
     <ion-row>
-      <ion-col text-right>
+      <ion-col>
         <button
           ion-button
           clear
           small
-          (click)="onAddToFavorites(quote)"
-          *ngIf="!isFavorite(quote)">Favorite</button>
-        <button
-          ion-button
-          clear
-          small
-          color="danger"
-          (click)="onRemoveFromFavorites(quote)"
-          *ngIf="isFavorite(quote)">Unfavorite</button>
+          (click)="onCopy(quote.text)"
+         ><img src="assets/copy.png"></button>
       </ion-col>
+      <!--<ion-col text-right>-->
+        <!--<button-->
+          <!--ion-button-->
+          <!--clear-->
+          <!--small-->
+          <!--(click)="onAddToFavorites(quote)"-->
+          <!--*ngIf="!isFavorite(quote)"><img src="assets/black.png"></button>-->
+        <!--<button-->
+          <!--ion-button-->
+          <!--clear-->
+          <!--small-->
+          <!--color="danger"-->
+          <!--(click)="onRemoveFromFavorites(quote)"-->
+          <!--*ngIf="isFavorite(quote)"><img src="assets/red.png"></button>-->
+      <!--</ion-col>-->
     </ion-row>
   </ion-card>
 
